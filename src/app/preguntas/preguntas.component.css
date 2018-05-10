@@ -1,0 +1,16 @@
+.preguntas{
+    margin-top: 100px;
+}
+.respuestas {
+    margin: auto;
+    margin-top: 30px;
+}
+.pregunta{
+    cursor: auto;
+    margin:10px;
+}
+.boton{
+    width: 300px;
+    margin: 10px;
+    height: 60px;
+}
