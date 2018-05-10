@@ -1,0 +1,13 @@
+.boton{
+    margin-top: 100px;
+    width: 500px;
+    height: 300px;
+    font-size: 200%;
+    cursor: auto;
+}
+
+.volver{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}

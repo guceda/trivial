@@ -8,9 +8,20 @@
 .pregunta{
     cursor: auto;
     margin:10px;
+    padding: 50px 40px;
 }
 .boton{
     width: 300px;
     margin: 10px;
     height: 60px;
+    opacity: 0.7;
+}
+
+.volver{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
 }

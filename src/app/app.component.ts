@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { PREGUNTAS } from './preguntas.db'
+import { Component, Input } from '@angular/core';
+import { PREGUNTAS } from './preguntas.db';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,11 @@ import { PREGUNTAS } from './preguntas.db'
 })
 export class AppComponent {
   title = 'app';
-  console.log(PREGUNTAS);
-  
+  @Input()clickPuntos
+  constructor( private router:Router){}
+
+  handleClickPuntos(){
+    this.router.navigate(['resultado'])   
+  }
 }
 

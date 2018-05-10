@@ -1,13 +1,14 @@
+<div (click) = 'handleClickTerminar()' class="volver">Terminar</div>
 <div class="preguntas column">
-  <div class="pregunta massive ui button">¿Cuántos satélites tenemos orbitando alrededor de la tierra?</div>
+  <div class="pregunta massive ui button">{{preguntaAct.texto}}</div>
   <div class="respuestas">
     <div class="column">
-      <button class="boton ui teal button ">Respuesta</button>
-      <button class="boton ui teal button ">Respuesta</button>
+      <button (click) = 'handleClickRespuesta(1)' class="boton ui teal button ">{{preguntaAct.res1}}</button>
+      <button (click) = 'handleClickRespuesta(2)' class="boton ui purple button ">{{preguntaAct.res2}}</button>
       </div>
       <div class="column">
-        <button class="boton ui teal button ">Respuesta</button>
-        <button class="boton ui teal button ">Respuesta</button>
+        <button (click) = 'handleClickRespuesta(3)' class="boton ui pink button ">{{preguntaAct.res3}}</button>
+        <button (click) = 'handleClickRespuesta(4)' class="boton ui yellow button ">{{preguntaAct.res4}}</button>
       </div>
     </div>
   </div>
