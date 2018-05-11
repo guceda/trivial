@@ -14,11 +14,8 @@ import { Router } from '@angular/router'
 export class PreguntasComponent implements OnInit {
 
   preguntaAct:Pregunta
-  puntuacion:number
 
-  constructor(private preguntasService: PreguntasService, private router:Router) {
-    this.puntuacion = 0
-  }
+  constructor(private preguntasService: PreguntasService, private router:Router) {}
 
   ngOnInit() {
     let promesa = this.preguntasService.getPreguntaActual()
@@ -28,23 +25,24 @@ export class PreguntasComponent implements OnInit {
   }
   handleClickRespuesta(pRes) {
     if (pRes == this.preguntaAct.resCorrecta) {
-      this.puntuacion +=50
+      this.preguntasService.getPuntuacionActual()
+      this.preguntasService.getMostrarResultado()
       console.log('has acertado')
       alert('has acertado')
-      let promesa = this.preguntasService.getPreguntaActual()
-      promesa.then((arrPromesas) => {
-        this.preguntaAct = arrPromesas
-      })
     } else {
       console.log('has fallado');
       alert('has fallado')
-      let promesa = this.preguntasService.getPreguntaActual()
-      promesa.then((arrPromesas) => {
-        this.preguntaAct = arrPromesas
-      })
-
     }
-
+    let promesa = this.preguntasService.getPreguntaActual()
+      promesa.then((arrPromesas) => {
+        if(arrPromesas.texto != "fin")
+        this.preguntaAct = arrPromesas
+        else{
+          this.router.navigate(['resultado'])
+          console.log('se ha acabado');
+          
+        }
+      })
   }
   handleClickTerminar(){
     this.router.navigate(['bienvenida']) 

@@ -1,2 +1,7 @@
-<button class="boton ui yellow button ">Tienes <strong>200</strong> puntos</button>
+<button class="boton massive ui button">
+    <div *ngFor = "let preg of preguntas;">
+        <div>Pregunta {{preguntas.indexOf(preg) + 1}}</div>
+    </div>
+    
+</button>
 <button (click) = handleclickVolver() class="volver ui gery button ">volver</button>

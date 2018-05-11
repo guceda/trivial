@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { PREGUNTAS } from '../preguntas.db';
+
 
 @Component({
   selector: 'app-resultado',
@@ -8,10 +10,15 @@ import { Router } from '@angular/router'
 })
 export class ResultadoComponent implements OnInit {
 
+  preguntas
+
   constructor(private router:Router) { }
   ngOnInit() {
+    console.log(PREGUNTAS);  
+    this.preguntas = PREGUNTAS
   }
   handleclickVolver(){
-    this.router.navigate(['preguntas'])   
+    this.router.navigate(['bienvenida'])   
   }
+  
 }

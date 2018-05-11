@@ -1,14 +1,18 @@
-<div (click) = 'handleClickTerminar()' class="volver">Terminar</div>
+<div class="puntos">
+    <img src="../assets/img/elyse.png" data-title="Elliot Fu" data-content="Elliot has been a member since July 2012" class="ui avatar image">
+    <a class="ui teal circular label">{{preguntasService.getMostrarResultado()}} ptos</a>   
+</div>
+<div (click)='handleClickTerminar()' class="volver">Terminar</div>
 <div class="preguntas column">
-  <div class="pregunta massive ui button">{{preguntaAct.texto}}</div>
+  <div class="pregunta massive ui button">{{preguntaAct?.texto}}</div>
   <div class="respuestas">
     <div class="column">
-      <button (click) = 'handleClickRespuesta(1)' class="boton ui teal button ">{{preguntaAct.res1}}</button>
-      <button (click) = 'handleClickRespuesta(2)' class="boton ui purple button ">{{preguntaAct.res2}}</button>
-      </div>
-      <div class="column">
-        <button (click) = 'handleClickRespuesta(3)' class="boton ui pink button ">{{preguntaAct.res3}}</button>
-        <button (click) = 'handleClickRespuesta(4)' class="boton ui yellow button ">{{preguntaAct.res4}}</button>
-      </div>
+      <button (click)='handleClickRespuesta(1)' class="boton ui teal button ">{{preguntaAct?.res1}}</button>
+      <button (click)='handleClickRespuesta(2)' class="boton ui purple button ">{{preguntaAct?.res2}}</button>
+    </div>
+    <div class="column">
+      <button (click)='handleClickRespuesta(3)' class="boton ui pink button ">{{preguntaAct?.res3}}</button>
+      <button (click)='handleClickRespuesta(4)' class="boton ui yellow button ">{{preguntaAct?.res4}}</button>
     </div>
   </div>
+</div>

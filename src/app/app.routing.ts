@@ -5,7 +5,6 @@ import { ResultadoComponent } from './resultado/resultado.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 export const appRoutes:Routes = [
-    { path:'',  redirectTo:'**', pathMatch:'full'},
     { path:'preguntas', component: PreguntasComponent},
     { path:'resultado', component: ResultadoComponent},
     { path:'**', component: BienvenidaComponent }
