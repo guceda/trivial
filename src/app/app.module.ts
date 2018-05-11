@@ -8,6 +8,7 @@ import { ResultadoComponent } from './resultado/resultado.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { PreguntasService } from './preguntas.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [PreguntasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

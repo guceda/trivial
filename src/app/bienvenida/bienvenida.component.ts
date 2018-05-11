@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { PreguntasService } from '../preguntas.service';
 
 @Component({
   selector: 'app-bienvenida',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class BienvenidaComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private preguntasService:PreguntasService) { }
 
   ngOnInit() {
   }
@@ -16,3 +17,6 @@ export class BienvenidaComponent implements OnInit {
     this.router.navigate(['preguntas'])  
   }
 }
+
+
+

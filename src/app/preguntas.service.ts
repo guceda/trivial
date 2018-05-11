@@ -4,40 +4,54 @@ import { PREGUNTAS } from './preguntas.db';
 
 @Injectable()
 export class PreguntasService {
-    pregActual:number
-    resultado:number
-    preguntaVacia:Pregunta
-    aciertosTotales:Array<string>
-    constructor(){
+    pregActual: number
+    preguntaVacia: Pregunta
+    estado: any[]
+
+    constructor() {
         this.pregActual = -1
-        this.resultado = 0
-        this.preguntaVacia = {texto:'fin', res1:'', res2:'', res3:'', res4:'', resCorrecta:0 }
-        this.aciertosTotales = []
+        this.estado = []
+        this.preguntaVacia = { texto: 'fin', res1: '', res2: '', res3: '', res4: '', resCorrecta: 0 }
 
     }
-    getPreguntaActual():Promise<Pregunta>{
-        let prom:Promise<Pregunta> = new Promise((resolve,reject)=>{
-            if(this.pregActual < PREGUNTAS.length - 1){
+    getPreguntaActual(result): Promise<Pregunta> {
+        if (this.pregActual !== -1) {
+            this.estado.push(result)
+            console.log(this.estado)
+        }
+        let prom: Promise<Pregunta> = new Promise((resolve, reject) => {
+            if (this.pregActual < PREGUNTAS.length - 1) {
                 this.pregActual++
-                resolve (PREGUNTAS[this.pregActual])
+                resolve(PREGUNTAS[this.pregActual])
                 console.log(PREGUNTAS[this.pregActual]);
-            }else{
-                resolve (this.preguntaVacia)                          
-            } 
-        }) 
-        return prom  
-    }
-    getPuntuacionActual():Promise<number>{
-        let prom:Promise<number> = new Promise((resolve, reject)=>{
-            this.resultado += 10
-            this.aciertosTotales.push('acierto')
-            resolve(this.resultado)
-            console.log(this.resultado);           
+            } else {
+                resolve(this.preguntaVacia)
+            }
         })
         return prom
     }
-    getMostrarResultado(){
-        return this.resultado
-    }      
-   
+    getMostrarEstado() {
+        return this.estado
+    }
+    getPuntosTotales() {
+        let puntosTotales = 0
+        for (let i = 0; i < this.estado.length; i++) {
+            puntosTotales += this.estado[i].puntos
+        }
+        console.log(puntosTotales);
+        return puntosTotales
+    }
+    getEstadoTotal(){
+        let estadoTotal:Array<string>
+        for (let i = 0; i < this.estado.length; i++) {
+            estadoTotal.push(this.estado[i].acierto)
+        }
+        console.log(estadoTotal);
+        return estadoTotal
+    }
+    reiniciar(){
+        this.pregActual = -1
+        this.estado = []
+        this.preguntaVacia = { texto: 'fin', res1: '', res2: '', res3: '', res4: '', resCorrecta: 0 }
+    }
 }

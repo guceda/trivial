@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { PREGUNTAS } from '../preguntas.db';
+import { PreguntasService } from '../preguntas.service'
 
 
 @Component({
@@ -10,9 +11,10 @@ import { PREGUNTAS } from '../preguntas.db';
 })
 export class ResultadoComponent implements OnInit {
 
-  preguntas
+  preguntas:any
+  estado:any
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private preguntasService:PreguntasService) {}
   ngOnInit() {
     console.log(PREGUNTAS);  
     this.preguntas = PREGUNTAS
