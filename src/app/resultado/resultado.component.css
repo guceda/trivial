@@ -11,3 +11,20 @@
     top: 30px;
     right: 20px;
 }
+
+.res{
+    text-align: left;
+    font-size: 70%;
+    background: lightcyan;
+    width: 210px;
+    padding: 10px;
+}
+
+
+.preg div{
+    font-weight: bold;
+}
+
+.est{
+    color: green
+}

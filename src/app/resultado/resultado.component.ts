@@ -14,13 +14,17 @@ export class ResultadoComponent implements OnInit {
   preguntas:any
   estado:any
 
-  constructor(private router:Router, private preguntasService:PreguntasService) {}
+
+  constructor(private router:Router, private preguntasService:PreguntasService) {
+  }
   ngOnInit() {
     console.log(PREGUNTAS);  
     this.preguntas = PREGUNTAS
+    this.estado = this.preguntasService.getMostrarEstado()
+    console.log(this.preguntasService.estado);
   }
   handleclickVolver(){
     this.router.navigate(['bienvenida'])   
   }
-  
+
 }

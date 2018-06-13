@@ -32,3 +32,10 @@
     top:30px;
     left: 30px;
 }
+
+
+.contador{
+    font-size: 170%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

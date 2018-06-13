@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { PreguntasService } from '../preguntas.service';
+import { PREGUNTAS } from '../preguntas.db';
 
 @Component({
   selector: 'app-bienvenida',
@@ -9,14 +10,17 @@ import { PreguntasService } from '../preguntas.service';
 })
 export class BienvenidaComponent implements OnInit {
 
-  constructor(private router:Router, private preguntasService:PreguntasService) { }
+  preguntas:any
+
+  constructor(private router:Router, private preguntasService:PreguntasService) {
+    this.preguntas = PREGUNTAS
+   }
 
   ngOnInit() {
   }
   handleClickJugar(){
     this.router.navigate(['preguntas'])  
+    this.preguntasService.reiniciar()
   }
 }
-
-
 

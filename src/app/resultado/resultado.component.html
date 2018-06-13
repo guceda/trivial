@@ -1,6 +1,50 @@
-<button class="boton massive ui button">
-    <div *ngFor = "let preg of preguntas;">
-        <div>Pregunta {{preguntas.indexOf(preg) + 1}}</div>
+<!-- <button class="boton massive ui button">
+    <div class="res ui grid">
+        <div class="preg">
+            <div>Pregunta 1</div>
+            <div>Pregunta 2</div>
+            <div>Pregunta 3</div>
+            <div>Pregunta 4</div>
+            <div>Pregunta 5</div>
+            <div>Pregunta 6</div>
+            <div>Pregunta 7</div>
+            <div>Pregunta 8</div>
+            <div>Pregunta 9</div>
+            <div>Pregunta 10</div>
+        </div>
+        <div class="est">
+            <div>bien</div>
+            <div>mal</div>
+            <div>bien</div>
+            <div>bien</div>
+            <div>mal</div>
+            <div>bien</div>
+            <div>mal</div>
+            <div>bien</div>
+            <div>bien</div>
+            <div>mal</div>
+
+        </div>
     </div>
 </button>
-<button (click) = handleclickVolver() class="volver ui gery button ">volver</button>
+<button (click)=handleclickVolver() class="volver ui gery button ">volver</button> -->
+
+
+
+
+
+<button class="boton massive ui button">
+        <div class=" res ui grid">
+            <div>
+                <div class="preg" *ngFor="let preg of preguntas;">
+                    <div>Pregunta {{preguntas.indexOf(preg) + 1}}</div>
+                </div>
+            </div>
+            <div>
+                <div class="est" *ngFor="let est of estado">
+                    <div>{{est.acierto}}</div>
+                </div>
+            </div>
+        </div>
+    </button>
+    <button (click)=handleclickVolver() class="volver ui gery button ">volver</button>

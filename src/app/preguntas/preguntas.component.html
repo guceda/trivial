@@ -4,6 +4,7 @@
 </div>
 <div (click)='handleClickTerminar()' class="volver">Terminar</div>
 <div class="preguntas column">
+  <div class="contador">{{preguntasService.contador}}<i class="stopwatch icon"></i></div>
   <div class="pregunta massive ui button">{{preguntaAct?.texto}}</div>
   <div class="respuestas">
     <div class="column">
